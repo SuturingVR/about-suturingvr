@@ -77,7 +77,10 @@
           <h2 class="section-heading">Get started on Oculus</h2>
           <p>SuturingVR is available to download for free from the Oculus Store</p>
           <div class="badges">
-            <a class="badge-link" href="#"><img src="img/Oculus-Badge.png" alt="" style = "width: 55%; height: 55%;"></a>
+            <a class="badge-link" id = "badge-link" href="#">
+              <img id = "badge-link-img" src="img/Oculus-Badge.png" alt="" style = "width: 55%; height: 55%;" onmouseover=this.src="img/Oculus-Badge-White.png" onmouseout=this.src="img/Oculus-Badge.png">
+              
+            </a>
           </div>
         </div>
       </div>
@@ -88,7 +91,8 @@
     <div class="container">
       <div class="section-heading text-center">
         <h2>Patient Instructions</h2>
-        <p class="text-muted">Introduction</p>
+        <br>
+        <h3>Introduction</h3>
         <hr>
         <p>
           Welcome to SuturingVR! In this virtual reality game, you’re an adventuring photographer in a race to get pictures of the most rare and majestic animals on the planet. 
@@ -100,25 +104,38 @@
 
         <br>
 
-        <p class="text-muted">Interactions</p>
+        <h3>Interactions</h3>
         <hr>
         <p>As of right now, interactions in the game rely on pointer controls. That is to say, you should point at where you want to interact, and then click the trigger on your controller! 
         </p>
         <br>
-        <p class="text-muted" style="font-size:16px;">Selecting Menu Options & Taking Photos</p>
+        <h4 class="text-muted">Selecting Menu Options & Taking Photos</h4>
         <hr>
         <p>The process of taking photos and selecting menu items is the same in SuturingVR. First, use your pointer to select a menu option, or while playing, the creature you’d like to photograph and then click the trigger button on your controller to select the item or capture the photo. You’ll know where you’re aiming because there should be a beam of light extending from your hands in-game. If you’re looking at a menu item, it should shift colors. If it’s a creature, you’ll be able to tell if you succeeded via a particle emission.
         </p>
         <br>
 
-        <p class="text-muted" style="font-size:16px;">Throwing Snacks</p>
+        <figure class="figure">
+          <img src="img/controllerTRIGGER.png" style = "width: 30%; height: 30%;"class="figure-img img-fluid rounded" alt="The trigger button highlighted in blue">
+          <figcaption class="figure-caption">The trigger button is highlighted in blue!</figcaption>
+        </figure>
+        
+        <br>
+
+        <h4 class="text-muted">Throwing Snacks</h4>
         <hr>
         <p>If you want to throw a snack and attract creatures, you’ll have to use the joystick button on your controller. By pushing the joystick button forward, you’ll be able to throw snacks. The further forward you push the button, the further snacks will go! Feeding the animals will also gain you extra points.
         </p>
         <br>
 
+        <figure class="figure">
+          <img src="img/controllerJOYSTICK.png" style = "width: 30%; height: 30%;"class="figure-img img-fluid rounded" alt="The joystick highlighted in blue">
+          <figcaption class="figure-caption">The joystick is highlighted in blue!</figcaption>
+        </figure>
+        
+        <br>
 
-        <p class="text-muted">Traversing Terrain</p>
+        <h4 class="text-muted">Traversing Terrain</h4>
         <hr>
         <p>
           Your vehicle is optimized for photography exploration. Instead of having you drive, your vehicle will show you the most ideal spots for photography and take you there when you’re ready. 
@@ -128,17 +145,24 @@
         </p>
 
       </div>
-      <div class = "instruction-div">
-
-      </div>
     </div>
   </section>
 
   <section class="cta" id="assistantinstructions">
     <div class="cta-content">
-      
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-5 my-auto">
+            <div class="header-content mx-auto">
+              <h2 class="mb-5" style = "color: #0968BD;">Research Assistant? Let's go.</h2>
+            </div>
+            <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger" style = "color: black; border-color: black;" >Learn More</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="overlay"></div>
+    <div class="overlay" style = "background: url('./img/bermix-studio-4ov6VgaiiX0-unsplash.jpg'); background-blend-mode:overlay;"></div>
   </section>
 
   <footer>
