@@ -1,0 +1,77 @@
+
+
+.cardBox{
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+}
+
+.cardThreeJS {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;
+    height: 20%;
+    background-image: linear-gradient(to right, #DC2430 0%, #7B4396 100%);
+    border-radius: 10px;
+    text-transform: uppercase;
+    background-size: 200% auto;
+    color: white;
+  }
+  
+  .cardThreeJS:hover {
+    cursor: pointer;
+    box-shadow: 0 7px 5px -6px rgb(0 0 0 / 40%), 0 6px 6px 0 rgb(0 0 0 / 28%), 0 5px 9px 0 rgb(0 0 0 / 24%);
+    transform: translateY(-5px);
+    transition: transform .3s;
+    background-position: right center;
+    color: white;
+    font-weight: bold;
+
+  }
+  
+  .cardThreeContainer {
+    padding: 4px 4px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .cardHeading{
+    position: absolute;
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+
+
+  .cardText{
+      text-align: center;
+  }
+
+
+@media screen and (max-width: 500px) {
+    .cardBox {
+      flex-direction: column;
+    }
+
+    .cardThreeJS{
+        width: 47%;
+        height: 15%;
+        margin: 1em;
+    }
+
+    .cardBox{
+        justify-content: center;
+    }
+
+
+  }
+

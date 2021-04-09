@@ -25,7 +25,9 @@
 
   <!-- Custom styles for this template -->
   <link href="css/new-age.min.css" rel="stylesheet">
+  <link href="css/cards.css" rel="stylesheet">
 
+  <script src = "js/three.js"></script>
 </head>
 
 <body id="page-top">
@@ -101,91 +103,175 @@
     </div>
   </section>
 
+<div class = "Gateway" id = "gateway">
 
-  <section class="features" id="patientinstructions" style = "background-image: linear-gradient(#7B4396, white 30%);">
-    <div class="container">
-      <div class="section-heading text-center">
-        <h2 style = "color: #FDC948; font-weight: bold;"> Patient Instructions</h2>
+  <div class = "cardHeading">
+    <h1 style = "font-weight: bolder; color: white;font-size: 4rem;">Ready?</h1>
+  </div>
 
-        <br>
-        
-        <h3>Introduction</h3>
-        <hr>
-        <p>
-          Welcome to SuturingVR! In this virtual reality game, you’re an adventuring photographer in a race to get pictures of the most rare and majestic animals on the planet. 
-          Your goal is to get as many photos as you can of the animals available in each environment from the comfort of your vehicle. The more photos of creatures you get, 
-          the more points you accumulate. The scoreboard to your left shows you the number of points you have currently as well as how many photos of each creature you have taken. 
-          In order to do this you’ll have to throw snacks in order to attract more animals, and engage in mini games that could let you win extra points and see some very rare sights. 
-          Try to get as many points as you can by the end of the journey!
-        </p>
+  <div class = "cardBox">
 
-        <br>
-
-        <h3>Interactions</h3>
-        <hr>
-        <p>As of right now, interactions in the game rely on pointer controls. That is to say, you should point at where you want to interact, and then click the trigger on your controller! 
-        </p>
-
-        <br>
-        <img src="img/SelectingStuffInGame.gif" class="img-fluid" alt="Menu Interactions" style="max-width: 360px;">
-        <br>
-
-        <br>
-        <h4 class="text-muted">Selecting Menu Options & Taking Photos</h4>
-        <hr>
-        <p>The process of taking photos and selecting menu items is the same in SuturingVR. First, use your pointer to select a menu option, or while playing, the creature you’d like to photograph and then click the trigger button on your controller to select the item or capture the photo. You’ll know where you’re aiming because there should be a beam of light extending from your hands in-game. If you’re looking at a menu item, it should shift colors. If it’s a creature, you’ll be able to tell if you succeeded via a particle emission.
-        </p>
-        <br>
-
-        <figure class="figure">
-          <img src="img/controllerTRIGGER.png" style = "width: 30%; height: 30%;"class="figure-img img-fluid rounded" alt="The trigger button highlighted in blue">
-          <figcaption class="figure-caption">The trigger button is highlighted in blue!</figcaption>
-        </figure>
-        
-        <br>
-
-        <h4 class="text-muted">Throwing Snacks</h4>
-        <hr>
-        <p>If you want to throw a snack and attract creatures, you’ll have to use the joystick button on your controller. By pushing the joystick button forward, you’ll be able to throw snacks. The further forward you push the button, the further snacks will go! Feeding the animals will also gain you extra points.
-        </p>
-        <br>
-
-        <figure class="figure">
-          <img src="img/controllerJOYSTICK.png" style = "width: 30%; height: 30%;"class="figure-img img-fluid rounded" alt="The joystick highlighted in blue">
-          <figcaption class="figure-caption">The joystick is highlighted in blue!</figcaption>
-        </figure>
-        
-        <br>
-
-        <h4 class="text-muted">Traversing Terrain</h4>
-        <hr>
-        <p>
-          Your vehicle is optimized for photography exploration. Instead of having you drive, your vehicle will show you the most ideal spots for photography and take you there when you’re ready. 
-          That’s more time to focus on pictures! The ideal spots (hotspots) will show up as bright orange diamonds in front of you. In order to travel towards a spot, select it in the same way you 
-          select menu items, by using your joystick to line your beam up with the hotspot and pressing the trigger button. You will be able to traverse through three terrains: a forest, ocean, and desert! 
-          At the start menu, you will be able to select which scene you would like to start with. After you have navigated through one scene, you may choose to view another. 
-        </p>
-
-      </div>
+  <a class = "cardThreeJS" id = "patientCard" href="patients.html">
+    <div class = "cardThreeContainer">
+      <h3 class = "cardText">Patients</h3>
     </div>
-  </section>
+  </a>
 
-  <section class="cta" id="assistantinstructions">
-    <div class="cta-content">
-      <div class="container h-100">
-        <div class="row h-100">
-          <div class="col-lg-5 my-auto">
-            <div class="header-content mx-auto">
-              <h2 class="mb-5" style = "color: #0968BD;">Research Assistant? Click below!</h2>
-            </div>
-            <a href="ra.html" class="btn btn-outline btn-xl js-scroll-trigger" style = "color: black; border-color: black;" >Learn More</a>
-          </div>
-        </div>
-      </div>
+  <a class = "cardThreeJS" id = "researchCard" href="research.html">
+    <div class = "cardThreeContainer">
+      <h3 class = "cardText">Research Assistants</h3>
+  </div>
+</a>
 
+  <a class = "cardThreeJS" id = "trainingCard" href="training.html">
+    <div class = "cardThreeContainer">
+        <h3 class = "cardText">Training Assistants</h3>
     </div>
-    <div class="overlay" style = "background: url('./img/bermix-studio-4ov6VgaiiX0-unsplash.jpg'); background-blend-mode:overlay;"></div>
-  </section>
+  </a>
+
+  </div>
+
+</div>
+  <script>
+        var container;
+
+        var camera, scene, renderer;
+
+        var geometry, group;
+
+        var mouseX = 0, mouseY = 0;
+
+        var windowHalfX = window.innerWidth / 2;
+        var windowHalfY = window.innerHeight / 2;
+
+
+        document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
+        init();
+        animate();
+
+        function init() {
+
+            container = document.createElement( 'div' );
+            container.id = "stage3d";
+            document.body.appendChild( container );
+
+            camera = new THREE.PerspectiveCamera( 95, window.innerWidth / window.innerHeight, 1, 20000 );
+            camera.position.z = 500;
+
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color( '#FDC948' );
+
+            var geometry = new THREE.CylinderGeometry( 0, 100, 100, 3 );
+            var materials = [
+            new THREE.MeshPhongMaterial({
+            // light
+            specular: '#b03b2e',
+            // intermediate
+            color: '#a31a0b',
+            // dark
+            emissive: '#7d1409',
+            shininess: 50 ,
+            transparent: true,
+            opacity: 0.9,
+            overdraw: true
+        }),
+            new THREE.MeshPhongMaterial({
+            // light
+            specular: '#2fa4b1',
+            // intermediate
+            color: '#0b94a3',
+            // dark
+            emissive: '#7B4396',
+            shininess: 50 ,
+            transparent: true,
+            opacity: 0.9,
+            overdraw: true
+        })];
+
+            group = new THREE.Object3D();
+
+            for ( var i = 0; i < 350; i ++ ) {
+
+                var mesh = new THREE.Mesh( geometry, materials[Math.floor(Math.random() * materials.length)] );
+                mesh.position.x = Math.random() * 2000 - 1000;
+                mesh.position.y = Math.random() * 2000 - 1000;
+                mesh.position.z = Math.random() * 2000 - 1000;
+                mesh.rotation.x = Math.random() * 2 * Math.PI;
+                mesh.rotation.y = Math.random() * 2 * Math.PI;
+                mesh.opacity = 50;
+                mesh.matrixAutoUpdate = false;
+                mesh.updateMatrix();
+                group.add( mesh );
+
+
+            }
+            scene.add( group );
+
+            var directionalLight = new THREE.DirectionalLight(0xffffff);
+            directionalLight.position.set(1, 1, 1).normalize();
+            directionalLight.intensity = 0.2;
+            scene.add(directionalLight);
+
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            renderer.sortObjects = false;
+            container.appendChild( renderer.domElement );
+
+
+                    //
+
+                    window.addEventListener( 'resize', onWindowResize, false );
+
+                }
+
+                function onWindowResize() {
+
+                    windowHalfX = window.innerWidth / 4;
+                    windowHalfY = window.innerHeight / 4;
+
+                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.updateProjectionMatrix();
+
+                    renderer.setSize( window.innerWidth, window.innerHeight );
+
+                }
+
+                function onDocumentMouseMove(event) {
+
+                    mouseX = ( event.clientX - windowHalfX ) * 2;
+                    mouseY = ( event.clientY - windowHalfY ) * 2;
+
+                }
+
+                //
+
+                function animate() {
+
+                    requestAnimationFrame( animate );
+                    render();
+
+                }
+
+                function render() {
+                  camera.position.x += ( mouseX - camera.position.x ) * .0080;
+                    camera.position.y += ( - mouseY - camera.position.y ) * .0080;
+
+                    camera.lookAt( scene.position );
+
+                    /*var currentSeconds = Date.now();
+                    group.rotation.x = Math.sin( currentSeconds * 0.0007 ) * 0.5;
+                    group.rotation.y = Math.sin( currentSeconds * 0.0003 ) * 0.5;
+                    group.rotation.z = Math.sin( currentSeconds * 0.0002 ) * 0.5;
+                    */
+
+                    renderer.render( scene, camera );
+
+                } 
+          </script>
+  
+</div>
+
 
   <footer>
     <div class="container">
