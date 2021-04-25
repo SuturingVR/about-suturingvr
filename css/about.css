@@ -1,0 +1,104 @@
+.UltimateContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.about-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: normal;
+    align-items:unset;
+    padding: 15px;
+}
+
+.about-container .about-card{
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background: rgba(255,255,255,0.1);
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}
+
+.about-container .about-card:hover{
+    height: 87%;
+    cursor: pointer;
+}
+
+.about-container .about-card:hover .about-img{
+    box-shadow: 0 7px 5px -6px rgb(0 0 0 / 40%), 0 6px 6px 0 rgb(0 0 0 / 28%), 0 5px 9px 0 rgb(0 0 0 / 24%);
+    transform: translateY(-5px);
+    transition: transform .3s;
+    animation: float 5s ease-in-out infinite;
+}
+
+.about-container .about-card .about-img{
+    position: relative;
+    width:260px;
+    height: 260px;
+    top: -60px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.about-container .about-card .about-img img{
+    max-width: 100%;
+     border-radius: 5px;
+}
+
+.about-container .about-card .about-content{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.about-container .about-card:hover .about-content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay:0.3s;
+}
+
+.about-content{
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.about-content h2, p{
+    transform: translateZ(20px);
+}
+
+
+#particles-js{
+    position: absolute;
+    height: 140%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+@media only screen and (max-width: 600px){
+    .about-container .about-card:active .about-content{
+        visibility: visible;
+        opacity: 1;
+        margin-top: -40px;
+        transition-delay:0.3s;
+    }
+
+    .about-container .about-card:hover .about-content{
+        margin-top: -0.1px;
+    }
+}
