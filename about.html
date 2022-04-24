@@ -47,9 +47,9 @@
                 <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="patients.html">Patients</a>
                 </li>
-                <li class="nav-item">
+                <!--<li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="training.html">Training Assistants</a>
-                </li>
+                </li>-->
                 <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="research.html">Research Assistants</a>
                 </li>
@@ -146,8 +146,28 @@
 
     </section>
 
-    <section class = "dreamteam-info" style = "z-index: 2; background-color: white;">
+    <section class = "dreamteam-info" style = "position: static; background-image: linear-gradient(0.45turn, #10216d, #DC2430 55%);">
+      <div id="particles-js"></div>  
+      <container class = "container" style = "display: flex; height: 100%; width: 100%; flex-direction: column; align-items: center;">
 
+          <h1 style = "color: white; z-index: 1; padding: 50px; font-weight: bold;">Our organizations</h1>
+
+          <div class = "UltimateContainer">
+
+            <div class = "about-container">
+              <a class = "about-DTE" id = "DrewGill" href = "https://www.ufdreamteam.org/dream-team-engineering" target="_blank" style = "text-decoration: none; color: black;">
+                <div class = "about-img">
+                  <img src = "img/team/DTE-header.jpg">
+                </div>
+                <div class = "about-content">
+                  <h2>Dream Team Engineering</h2>
+                  <p>
+                    Dream Team Engineering is a group of engineering and non-engineering students alike that are dedicated to making novel technologies to enhance the lives of the Children at UF Health Shands. Our team works alongside physicians, nurses, child-life specialists, and PT/OT to create engineering devices to impact patient experience. Dream Team Engineering is currently composed of six individual teams that are tasked with developing specific technologies that will be used in-hospital to improve the experience for patients at Shands.</p>
+                  </div>
+              </a>
+            </div>
+          </div>
+        </container>
     </section>
 
     <footer style = "z-index: 2;">
@@ -155,7 +175,7 @@
         <p>&copy; SuturingVR 2021. All Rights Reserved.</p>
         <ul class="list-inline">
           <li class="list-inline-item">
-            <a href="#">Privacy</a>
+            <a href="privacy.html">Privacy</a>
           </li>
           <li class="list-inline-item">
             <a href="#">Terms</a>

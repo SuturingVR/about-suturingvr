@@ -13,7 +13,62 @@
     align-items:unset;
     padding: 15px;
 }
+.about-container .about-DTE{
+    position: relative;
+    max-width: 800px;
+    height: 215px;
+    background: rgba(255,255,255,0.1);
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}
+.about-container .about-DTE:hover{
+    height: 87%;
+    cursor: pointer;
+}
 
+.about-container .about-DTE:hover .about-img{
+    box-shadow: 0 7px 5px -6px rgb(0 0 0 / 40%), 0 6px 6px 0 rgb(0 0 0 / 28%), 0 5px 9px 0 rgb(0 0 0 / 24%);
+    transform: translateY(-5px);
+    transition: transform .3s;
+    animation: float 5s ease-in-out infinite;
+}
+
+.about-container .about-DTE .about-img{
+    position: relative;
+    width:760px;
+    height: 260px;
+    top: -60px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.about-container .about-DTE .about-img img{
+    max-width: 100%;
+     border-radius: 5px;
+}
+
+.about-container .about-DTE .about-content{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.about-container .about-DTE:hover .about-content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay:0.3s;
+}
 .about-container .about-card{
     position: relative;
     max-width: 300px;
